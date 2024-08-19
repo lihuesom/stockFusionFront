@@ -1,30 +1,17 @@
-import React from "react";
-import { Table, Select, Tag } from "antd";
-
-const products = [
-  {
-    name: "Producto A",
-    description: "Descripción del Producto A",
-    issued_date: "2024-01-01",
-  },
-  {
-    name: "Producto B",
-    description: "Descripción del Producto B",
-    issued_date: "2024-02-15",
-  },
-  {
-    name: "Producto C",
-    description: "Descripción del Producto C",
-    issued_date: "2024-03-10",
-  },
-];
+import React, { useEffect, useState } from "react";
+import { Table } from "antd";
+import { GetProduct } from "../services/responses/ProductResponse";
+import { getProducts } from "../services/ProductResponse";
 
 const ProductList = () => {
+  const [data, setData] = useState<GetProduct[]>([]);
+  const [loading, setLoading] = useState(true);
+
   const columns = [
     {
       title: "Producto",
-      dataIndex: "product",
-      key: "product",
+      dataIndex: "name",
+      key: "name",
     },
     {
       title: "Descripción",
@@ -32,38 +19,32 @@ const ProductList = () => {
       key: "description",
     },
     {
-      title: "Fecha de entrega",
+      title: "Fecha de Emisión",
       dataIndex: "issued_date",
       key: "issued_date",
     },
   ];
 
-  const data = [
-    {
-      key: "1",
-      product: "Producto A",
-      description: "12345",
-      issued_date: "Juan Pérez",
-    },
-    {
-      key: "2",
-      product: "Producto B",
-      description: "67890",
-      issued_date: "María López",
-    },
-    {
-      key: "3",
-      product: "Producto C",
-      description: "54321",
-      issued_date: "Carlos García",
-    },
-  ];
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const products = await getProducts();
+      setData(products);
+      setLoading(false);
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div className="flex items-center mt-5 justify-center bg-white">
       <div className="w-full max-w-4xl">
         <Table
           columns={columns}
-          dataSource={data}
+          dataSource={data.map((product) => ({
+            key: product.id,
+            ...product,
+          }))}
+          loading={loading}
           pagination={false}
           scroll={{ x: "max-content" }}
         />

@@ -23,6 +23,10 @@ const ManagementView = () => {
     setIsModalVisible(false);
   };
 
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
+  
   return (
     <Layout className="min-h-screen">
       {/* Header */}
@@ -68,7 +72,7 @@ const ManagementView = () => {
               desea adquirir, asegurando un proceso rápido y preciso.
             </p>
             <button
-              onClick={() => showModal(<RegisterInventory />)}
+              onClick={() => showModal(<RegisterInventory  onClose={closeModal} />)}
               className="text-blue-500 mt-5 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
             >
               Ir &rsaquo;
@@ -81,7 +85,7 @@ const ManagementView = () => {
               financieros solicitados por nuestros clientes.
             </p>
             <button
-              onClick={() => showModal(<DeliveryManagement />)}
+              onClick={() => showModal(<DeliveryManagement  onClose={closeModal}  />)}
               className="text-blue-500 mt-5 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
             >
               Ir &rsaquo;

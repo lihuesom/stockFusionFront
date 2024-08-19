@@ -1,7 +1,8 @@
-export const getProduct = (id: number) => {
-    // Lógica para obtener un producto por ID
-    return {};
+export type GetProduct = {
+    id: string;
+    name: string;
+    description: string;
+    issued_date: string;
+    expiry_date: string;
+    status: boolean;
 };
-
-// Export vacío para evitar errores con --isolatedModules
-export {};
