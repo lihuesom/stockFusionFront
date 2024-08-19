@@ -1,46 +1,60 @@
-# Getting Started with Create React App
+# Frontend React - Proyecto de Prueba Técnica
+Este repositorio contiene la parte frontend de un proyecto de prueba técnica desarrollado con React. Este proyecto se conecta con un backend que puedes encontrar en https://github.com/lihuesom/stockFusion. Para ver las funcionalidades completas, asegúrate de clonar también el repositorio del backend.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Requisitos
+* Node.js versión 14
+* nvm (Node Version Manager)
 
-## Available Scripts
+## Configuración del Entorno
+1. #### Instalar nvm
 
-In the project directory, you can run:
+Si aún no tienes nvm instalado, puedes seguir las instrucciones en nvm-sh/nvm.
 
-### `npm start`
+2. #### Instalar Node.js versión 14
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Una vez que nvm esté instalado, usa el siguiente comando para instalar y usar Node.js versión 14:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+nvm install 14
+nvm use 14
 
-### `npm test`
+```
+3. #### Clonar el Repositorio
+Clona este repositorio en tu máquina local:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git https://github.com/lihuesom/stockFusionFront.git
+cd stockFusionFront
+```
+También necesitarás clonar el repositorio del backend para probar la integración:
 
-### `npm run build`
+```bash
+git clone https://github.com/lihuesom/stockFusion
+cd stockFusion
+```
+4. #### Instalar Dependencias
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+En el directorio del proyecto frontend, instala las dependencias con:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install
+```
+5. #### Ejecutar el Proyecto
+Para iniciar el servidor de desarrollo, usa el siguiente comando:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
+Esto abrirá el proyecto en tu navegador en http://localhost:3000.
 
-### `npm run eject`
+## Estructura del Proyecto
+* src/ - Contiene el código fuente del proyecto.
+* app/ - Componentes principales, servicios, y vistas.
+* App.tsx - Componente principal de la aplicación.
+* index.tsx - Punto de entrada de la aplicación.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Contribuciones
+Si deseas contribuir a este proyecto, por favor sigue las prácticas de Git y envía un Pull Request con tus cambios.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
